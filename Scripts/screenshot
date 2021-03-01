@@ -1,0 +1,12 @@
+#!/bin/bash
+case $1 in
+	save)
+		maim "$HOME/Pictures/Screenshots/$(date +%F-%H:%M:%S).png"
+		;;
+	region)
+		maim -s -u | xclip -selection clipboard -t image/png
+		;;
+	*)
+		maim | xclip -selection clipboard -t image/png
+		;;
+esac

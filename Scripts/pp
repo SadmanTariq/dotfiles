@@ -1,0 +1,33 @@
+#!/bin/bash
+
+case $1 in
+	c)
+		# Chemistry
+		xdg-open "https://papers.gceguide.com/A%20Levels/Chemistry%20(9701)/20${2:(-2)}/9701_$2_qp_$3.pdf" &> /dev/null &
+		xdg-open "https://papers.gceguide.com/A%20Levels/Chemistry%20(9701)/20${2:(-2)}/9701_$2_ms_$3.pdf" &> /dev/null &
+		xdg-open "https://www.cambridgeinternational.org/Images/164870-2016-specimen-data-booklet.pdf" &> /dev/null
+		;;
+	cs)
+		# Computer Science
+		xdg-open "https://papers.gceguide.com/A%20Levels/Computer%20Science%20(for%20final%20examination%20in%202021)%20(9608)/20${2:(-2)}/9608_$2_qp_$3.pdf" &> /dev/null &
+		xdg-open "https://papers.gceguide.com/A%20Levels/Computer%20Science%20(for%20final%20examination%20in%202021)%20(9608)/20${2:(-2)}/9608_$2_ms_$3.pdf"
+		;;
+	p)
+		xdg-open "https://papers.gceguide.com/A%20Levels/Physics%20(9702)/20${2:(-2)}/9702_$2_qp_$3.pdf" &> /dev/null &
+		xdg-open "https://papers.gceguide.com/A%20Levels/Physics%20(9702)/20${2:(-2)}/9702_$2_ms_$3.pdf"
+		;;
+	m)
+        xdg-open "https://papers.gceguide.com/A%20Levels/Mathematics (9709)/20${2:(-2)}/9709_$2_qp_$3.pdf" &> /dev/null &
+        xdg-open "https://papers.gceguide.com/A%20Levels/Mathematics (9709)/20${2:(-2)}/9709_$2_ms_$3.pdf"
+        xdg-open "https://www.cambridgeinternational.org/Images/417318-list-of-formulae-and-statistical-tables.pdf"
+		;;
+	*)
+		echo Unknown subject
+		echo Available subjects:
+		echo "    c: Chemistry"
+		echo "    p: Physics"
+		echo "   cs: Computer Science"
+        echo "    m: Math"
+		;;
+esac
+		
