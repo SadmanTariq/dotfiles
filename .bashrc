@@ -44,7 +44,7 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # Pywal
-(cat ~/.cache/wal/sequences &)
+# (cat ~/.cache/wal/sequences &)
 
 # Env variables
 export EDITOR="/usr/bin/nvim"
@@ -72,34 +72,3 @@ source <("/usr/bin/starship" init bash --print-full-init)
 else
 source /dev/stdin <<<"$("/usr/bin/starship" init bash --print-full-init)"
 fi
-
-# # PS1
-
-# __git_ps1_venv() {
-# # python venv and git info
-#    local pre="$1"
-#    local post="$2"
-
-#    if [ -n "${VIRTUAL_ENV}" ] && [ -z "${VIRTUAL_ENV_DISABLE_PROMPT:-}" ]; then
-#       if [ "`basename \"$VIRTUAL_ENV\"`" = "__" ] ; then
-#          # special case for Aspen magic directories
-#          # see http://www.zetadev.com/software/aspen/
-#          pre="[`basename \`dirname \"$VIRTUAL_ENV\"\``] ${pre}"
-#       else
-#          pre="(`basename \"$VIRTUAL_ENV\"`) ${pre}"
-#       fi
-#    fi
-
-#    __git_ps1 "${pre}" "${post}" "$3"
-# }
-
-# source $HOME/Scripts/git-prompt.sh
-# GIT_PS1_SHOWDIRTYSTATE=1
-# GIT_PS1_SHOWSTASHSTATE=1
-# GIT_PS1_SHOWUNTRACKEDFILES=1
-# GIT_PS1_SHOWUPSTREAM=1
-# GIT_PS1_SHOWCOLORHINTS=1
-
-# export __PS1=" \[$(tput bold)\]\[\033[38;5;9m\] \[\033[38;5;10m\]\w\[$(tput sgr0)\] \[$(tput bold)\]\[$(tput sgr0)\] "
-
-# PROMPT_COMMAND='__git_ps1_venv "" "$__PS1" "(%s)" '

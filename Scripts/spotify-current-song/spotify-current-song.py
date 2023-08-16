@@ -3,7 +3,7 @@ import tekore as tk
 from time import sleep
 
 CFG_PATH = '/home/sadmantariq/.config/tekore.cfg'
-OUTPUT = "/home/sadmantariq/Scripts/spotify-current-song/output"
+OUTPUT = "/home/sadmantariq/repos/dotfiles/Scripts/spotify-current-song/output"
 MAX_STRING_LENGTH = 60
 REFRESH_INTERVAL = 2
 

@@ -1,11 +1,10 @@
 #!/bin/bash
-# loc='dac'
-# loc='23.844,90.401'
-options='QF'
-widgetInternalName='genmon-15'
+loc=''
+options='qF'
+widgetInternalName='genmon-2'
 # img_path='/tmp/weather.png'
 
-text="$(curl -s "https://wttr.in/$loc?T$options&format=1")" # | ansifilter -M)"
+text="$(curl -s "https://wttr.in/$loc?T$options&format=1" | sed -e 's/  / /g' -e 's/+//g')"
 tooltip="$(curl -s https://wttr.in/$loc?$options | ansifilter -M)"
 refreshCommand="xfce4-panel --plugin-event=$widgetInternalName:refresh:bool:true"
 
