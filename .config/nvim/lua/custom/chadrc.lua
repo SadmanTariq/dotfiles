@@ -16,6 +16,15 @@ M.ui = {
 
   statusline = {
     theme = "minimal"
+  },
+
+-- Override theme color to be more visible
+  changed_themes = {
+    gruvbox = {
+      base_30 = {
+        grey_fg = "#777777"
+      }
+    }
   }
 }
 
