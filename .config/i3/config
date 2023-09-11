@@ -1,0 +1,55 @@
+# i3 config file (v4)
+#
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+include "config.d/*"
+include "colorschemes/gruvbox.config"
+
+set $mod Mod4
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+# font pango:monospace 8
+font pango:JetBrainsMonoNerdFont, FontAwesome 9
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+#font pango:DejaVu Sans Mono 8
+
+set $refresh_i3status killall -SIGUSR1 i3status
+
+# Use Mouse+$mod to drag floating windows to their wnted position
+floating_modifier $mod
+
+# move tiling windows via drag & drop by left-clicking into the title bar,
+# or left-clicking anywhere into the window while holding the floating modifier.
+#tiling_drag modifier titlebar
+
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 ""
+
+# Workspace assignments
+assign [class=discord] $ws10
+
+
+# Wallpaper
+exec --no-startup-id "nitrogen --set-zoom-fill /home/sadmantariq/OneDrive/Wallpapers/jzvckqvu1jj51.png"
+
+
+# Gaps
+gaps inner 5
+# smart_gaps on
+# smart_borders on
+
+default_border pixel 2
