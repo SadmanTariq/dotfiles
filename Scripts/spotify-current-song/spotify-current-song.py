@@ -18,7 +18,7 @@ def _ms_to_formatted(time_in_ms):
 
 def _clear_file(file_path):
     with open(file_path, 'w') as f:
-        f.write(" ")
+        f.write("")
 
 
 def main():
@@ -41,13 +41,13 @@ def main():
             _clear_file(OUTPUT)
             continue
 
-        play_indicator = '' if cp.is_playing else '  '
+        play_indicator = '' if cp.is_playing else '󰏥 '
         timestamp = (_ms_to_formatted(cp.progress_ms) + '/' +
                      _ms_to_formatted(cp.item.duration_ms))
         artists = ", ".join([a.name for a in cp.item.artists])
         song_name = cp.item.name
 
-        formatted = f"  [{play_indicator}{timestamp}] {artists} - {song_name}"
+        formatted = f" [{play_indicator}{timestamp}] {artists} - {song_name}"
 
         if len(formatted) > MAX_STRING_LENGTH:
             formatted = formatted[:MAX_STRING_LENGTH - 3] + "..."
