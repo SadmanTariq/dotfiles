@@ -10,6 +10,12 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# Screenshots
+set $screenshot /home/sadmantariq/repos/dotfiles/Scripts/screenshot
+bindsym Print        exec --no-startup-id $screenshot  # Copy to clipboard
+bindsym $mod+Print   exec --no-startup-id $screenshot save
+bindsym $mod+Shift+s exec --no-startup-id $screenshot region
+
 # start dmenu (a program launcher)
 bindsym $mod+space exec --no-startup-id "rofi -show combi"
 
@@ -103,3 +109,4 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
