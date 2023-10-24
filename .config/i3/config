@@ -28,16 +28,18 @@ floating_modifier $mod
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1:1"
-set $ws2 "2:2"
-set $ws3 "3:3"
-set $ws4 "4:4"
-set $ws5 "5:5"
-set $ws6 "6:6"
-set $ws7 "7:7"
-set $ws8 "8:8"
-set $ws9 "100:"
-set $ws10 "101:"
+set $ws1 "1:১"
+set $ws2 "2:২"
+set $ws3 "3:৩"
+set $ws4 "4:৪"
+set $ws5 "5:৫"
+set $ws6 "6:৬"
+set $ws7 "7:৭"
+set $ws8 "8:৮"
+set $ws9 "9:৯"
+set $ws10 "10:০"
+set $ws11 "100:"
+set $ws12 "101:"
 
 # Workspace assignments
 assign [class=discord] $ws10
