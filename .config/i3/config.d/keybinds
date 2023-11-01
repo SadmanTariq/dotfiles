@@ -24,7 +24,7 @@ bindsym $mod+Print   exec --no-startup-id $screenshot save
 bindsym $mod+Shift+s exec --no-startup-id $screenshot region
 
 # start dmenu (a program launcher)
-bindsym $mod+space exec --no-startup-id "rofi -show combi"
+bindsym $mod+space exec --no-startup-id "rofi -show drun"
 
 # change focus
 bindsym $mod+h focus left

@@ -42,8 +42,8 @@ set $ws11 "100:"
 set $ws12 "101:"
 
 # Workspace assignments
-assign [class=discord] $ws10
-assign [class=Spotify] $ws9
+assign [class=Spotify] $ws11
+assign [class=discord] $ws12
 
 
 # Wallpaper
