@@ -43,3 +43,11 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias count='tot=0; echo -n "0 "; while true; do read -rsn1 in; if [ "$in" == "" ]; then tot=$(($tot+1)); else tot=$(($tot-1)); fi; echo -en "\r$tot "; done'
 
 alias upload='curl -F "file=@$(ls | fzf)" https://0x0.st'
+
+function automount(){
+  out=$(udisksctl mount -b $1)
+  echo $out
+  if [ "$2" == "--cd" ]; then
+    cd "$(echo $out | rg -o '\/[^\s]+$')"
+  fi
+}
