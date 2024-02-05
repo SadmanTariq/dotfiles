@@ -1,4 +1,6 @@
-function newscript(){
+#!/bin/bash
+
+function mkscript(){
     touch $1
     chmod +x $1
     echo '#!/bin/bash' >> $1
@@ -32,10 +34,10 @@ alias la='ls -Avh'   # show long listing of all except ".."
 alias p='sudo pacman'
 alias r='ranger'
 alias ~='cd ~'
-alias n='nvim'
 alias sbrc='source ~/.bashrc'
 
 alias sdn='shutdown now'
+alias hib='systemctl hibernate'
 
 # alias sudo='sudo '  # to make aliases work with sudo
 
@@ -51,3 +53,27 @@ function automount(){
     cd "$(echo $out | rg -o '\/[^\s]+$')"
   fi
 }
+
+function n() {
+  if [ "$TERMINAL" == "kitty" ]; then
+    kitten @ set-background-opacity 1.0
+  fi
+
+  if [ $# == 0 ]; then
+    nvim .
+  else
+    nvim "$@"
+  fi
+
+  if [ "$TERMINAL" == "kitty" ]; then
+    kitten @ set-background-opacity 0.8
+  fi
+
+}
+
+# Git aliases
+alias g='git'
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gcm='git commit -m'
