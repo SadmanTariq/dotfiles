@@ -37,7 +37,7 @@ alias ~='cd ~'
 alias sbrc='source ~/.bashrc'
 
 alias sdn='shutdown now'
-alias hib='systemctl hibernate'
+alias hib='systemctl hibernate && exit'
 
 # alias sudo='sudo '  # to make aliases work with sudo
 
@@ -77,3 +77,8 @@ alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
 alias gcm='git commit -m'
+
+if [ "$TERMINAL" == "kitty" ]; then
+  alias ssh='kitty +kitten ssh'
+  alias icat='kitty +kitten icat'
+fi
