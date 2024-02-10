@@ -23,6 +23,15 @@ fi
 # Env variables
 export EDITOR="/usr/bin/nvim"
 
+# Increase history size
+export HISTFILESIZE=100000
+export HISTSIZE=100000
+export HISTTIMEFORMAT="[%F %T] "
+
+# fzf bindings
+source /usr/share/fzf/key-bindings.bash
+source /usr/share/fzf/completion.bash
+
 # bash parameter completion for the dotnet CLI
 _dotnet_bash_complete()
 {
