@@ -47,12 +47,19 @@ alias count='tot=0; echo -n "0 "; while true; do read -rsn1 in; if [ "$in" == ""
 alias upload='curl -F "file=@$(ls | fzf)" https://0x0.st'
 
 function automount(){
-  out=$(udisksctl mount -b $1)
+  local device="$1"
+  if [ "$1" == "--cd" ]; then
+    device="$2"
+  fi
+
+  out=$(udisksctl mount -b "$device")
   echo $out
-  if [ "$2" == "--cd" ]; then
-    cd "$(echo $out | rg -o '\/[^\s]+$')"
+  if [ "$1" == "--cd" ]; then
+    cd "/run/media/$(whoami)/$(echo $out | rg -o '[^/]+$')"
   fi
 }
+
+alias automcd='automount --cd'
 
 function n() {
   if [ "$TERMINAL" == "kitty" ]; then
