@@ -89,3 +89,5 @@ if [ "$TERMINAL" == "kitty" ]; then
   alias ssh='kitty +kitten ssh'
   alias icat='kitty +kitten icat'
 fi
+
+alias clip='xclip -selection clipboard'
