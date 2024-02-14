@@ -62,20 +62,11 @@ function automount(){
 alias automcd='automount --cd'
 
 function n() {
-  if [ "$TERMINAL" == "kitty" ]; then
-    kitten @ set-background-opacity 1.0
-  fi
-
   if [ $# == 0 ]; then
     nvim .
   else
     nvim "$@"
   fi
-
-  if [ "$TERMINAL" == "kitty" ]; then
-    kitten @ set-background-opacity 0.8
-  fi
-
 }
 
 # Git aliases
