@@ -85,7 +85,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 -- Pane jumping
 local function jump_to_window(dir)
-  return function () vim.cmd('wincmd ' .. dir) end
+  return function() vim.cmd('wincmd ' .. dir) end
 end
 vim.keymap.set('n', '<C-h>', jump_to_window('h'), { desc = 'Jump to left window.' })
 vim.keymap.set('n', '<C-j>', jump_to_window('j'), { desc = 'Jump to below window.' })
@@ -103,7 +103,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
- -- TODO
+-- TODO
 
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
@@ -122,8 +122,9 @@ local on_attach = function(_, bufnr)
     vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
   end
 
-  nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+  nmap('<leader>cr', vim.lsp.buf.rename, '[C]ode [R]ename')
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+  nmap('<leader>cf', vim.lsp.buf.format, '[C]ode [F]ormat')
 
   nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
@@ -191,7 +192,7 @@ local servers = {
     }
   },
   tsserver = {},
-  html = { filetypes = { 'html', 'twig', 'hbs'} },
+  html = { filetypes = { 'html', 'twig', 'hbs' } },
 
   lua_ls = {
     Lua = {
@@ -241,7 +242,7 @@ cmp.setup {
       luasnip.lsp_expand(args.body)
     end,
   },
-  completion = { },
+  completion = {},
   preselect = cmp.PreselectMode.None,
   mapping = cmp.mapping.preset.insert {
     ['<C-n>'] = cmp.mapping.select_next_item(),
