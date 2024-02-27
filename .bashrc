@@ -57,3 +57,6 @@ then
 else
   source /dev/stdin <<<"$("/usr/bin/starship" init bash --print-full-init)"
 fi
+
+# zoxide
+eval "$(zoxide init --cmd cd bash)"
