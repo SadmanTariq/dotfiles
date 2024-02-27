@@ -122,3 +122,5 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Lock screen
+bindsym $mod+Ctrl+l exec --no-startup-id "xfce4-screensaver-command -l"
