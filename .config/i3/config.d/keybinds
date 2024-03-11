@@ -94,6 +94,9 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Shift+minus move container to workspace number $ws11
 bindsym $mod+Shift+equal move container to workspace number $ws12
 
+# move workspace to next monitor
+bindsym $mod+greater move workspace to output next
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
