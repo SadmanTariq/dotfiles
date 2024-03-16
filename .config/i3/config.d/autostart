@@ -33,3 +33,6 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Spotify status
 exec --no-startup-id /home/sadmantariq/repos/dotfiles/Scripts/spotify-current-song/venv/bin/python /home/sadmantariq/repos/dotfiles/Scripts/spotify-current-song/spotify-current-song.py
+
+# Clipcat clipboard manager
+exec --no-startup-id clipcatd
