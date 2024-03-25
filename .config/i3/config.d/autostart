@@ -36,3 +36,6 @@ exec --no-startup-id /home/sadmantariq/repos/dotfiles/Scripts/spotify-current-so
 
 # Clipcat clipboard manager
 exec --no-startup-id clipcatd
+
+# Wallpaper
+exec_always --no-startup-id feh --no-fehbg --bg-fill '/home/sadmantariq/.config/i3/wallpapers/'

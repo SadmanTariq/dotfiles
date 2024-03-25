@@ -45,11 +45,6 @@ set $ws12 "101:"
 assign [class=Spotify] $ws11
 assign [class=discord] $ws12
 
-
-# Wallpaper
-exec --no-startup-id "nitrogen --set-zoom-fill /home/sadmantariq/OneDrive/Wallpapers/jzvckqvu1jj51.png"
-
-
 # Gaps
 gaps inner 5
 # smart_gaps on
