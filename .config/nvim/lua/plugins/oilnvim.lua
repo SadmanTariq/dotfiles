@@ -14,17 +14,15 @@ return {
         show_hidden = true
       }
     })
-    local open_with_preview = function()
-      vim.cmd("Oil")
-      local timeout = 100
 
-      -- HACK: Wait for the cursor to be set
-      while timeout > 0 and not oil.get_cursor_entry() do
-        timeout = timeout - 1
-      end
+    -- HACK: Open preview window after opening oil.
+    --       https://github.com/stevearc/oil.nvim/issues/339
+    vim.keymap.set('n', '-', function()
+      oil.open()
 
-      require("oil.actions").preview.callback()
-    end
-    vim.keymap.set("n", "-", open_with_preview, { desc = "Open parent directory." })
+      vim.defer_fn(function()
+        oil.select({ preview = true })
+      end, 50)
+    end)
   end
 }
