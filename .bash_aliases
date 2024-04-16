@@ -82,3 +82,13 @@ if [ "$TERMINAL" == "kitty" ]; then
 fi
 
 alias clip='xclip -selection clipboard'
+
+function svenv() {
+  if [ -d 'venv' ]; then
+    source venv/bin/activate
+  elif [ -d '.venv' ]; then
+    source .venv/bin/activate
+  else
+    echo 'No venv found in ./venv or ./.venv'
+  fi
+}
