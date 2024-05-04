@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-tmpbg="/tmp/screen.png"
-scrot "$tmpbg"; corrupter -mag 3 -boffset 15 "$tmpbg" "$tmpbg"
-i3lock -i "$tmpbg"; rm "$tmpbg"
