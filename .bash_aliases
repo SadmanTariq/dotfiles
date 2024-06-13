@@ -1,30 +1,31 @@
 #!/bin/bash
 
 function mkscript(){
-    touch $1
-    chmod +x $1
-    echo '#!/bin/bash' >> $1
-    nvim $1
+  touch $1
+  chmod +x $1
+  echo '#!/bin/bash' >> $1
+  nvim $1
 }
 
 function mkcd(){
-	mkdir $1
-	cd $1
+  mkdir $1
+  cd $1
 }
 
 function countdown(){
-   date1=$((`date +%s` + $1)); 
-   while [ "$date1" -ge `date +%s` ]; do 
-     echo -ne "$(date -u --date @$(($date1 - `date +%s`)) +%H:%M:%S)\r";
-     sleep 0.1
-   done
+  date1=$((`date +%s` + $1)); 
+  while [ "$date1" -ge `date +%s` ]; do 
+    echo -ne "$(date -u --date @$(($date1 - `date +%s`)) +%H:%M:%S)\r";
+    sleep 0.1
+  done
 }
+
 function stopwatch(){
   date1=`date +%s`; 
-   while true; do 
+  while true; do 
     echo -ne "$(date -u --date @$((`date +%s` - $date1)) +%H:%M:%S)\r"; 
     sleep 0.1
-   done
+  done
 }
 
 alias ls='ls --color=auto'
@@ -68,6 +69,8 @@ function n() {
     nvim "$@"
   fi
 }
+
+alias nmd='n -c "set ft=markdown"'
 
 # Git aliases
 alias g='git'
