@@ -15,18 +15,21 @@ return {
       }
     })
 
-    -- HACK: Open preview window after opening oil.
-    --       https://github.com/stevearc/oil.nvim/issues/339
-    vim.keymap.set('n', '-', function()
-      oil.open()
+    vim.keymap.set('n', '-', oil.open)
 
-      -- Wait until oil has opened, for a maximum of 1 second.
-      vim.wait(1000, function()
-        return oil.get_cursor_entry() ~= nil
-      end)
-      if oil.get_cursor_entry() then
-        oil.open_preview()
-      end
-    end)
+    -- -- HACK: Open preview window after opening oil.
+    -- --       https://github.com/stevearc/oil.nvim/issues/339
+    --
+    -- vim.keymap.set('n', '-', function()
+    --   oil.open()
+    --
+    --   -- Wait until oil has opened, for a maximum of 1 second.
+    --   vim.wait(1000, function()
+    --     return oil.get_cursor_entry() ~= nil
+    --   end)
+    --   if oil.get_cursor_entry() then
+    --     oil.open_preview()
+    --   end
+    -- end)
   end
 }
