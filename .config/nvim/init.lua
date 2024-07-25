@@ -123,7 +123,9 @@ local on_attach = function(_, bufnr)
   end
 
   nmap('<leader>cr', vim.lsp.buf.rename, '[C]ode [R]ename')
-  nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+  nmap('<leader>ca', function()
+    require('tiny-code-action').code_action()
+  end, '[C]ode [A]ction')
   nmap('<leader>cf', vim.lsp.buf.format, '[C]ode [F]ormat')
 
   nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
