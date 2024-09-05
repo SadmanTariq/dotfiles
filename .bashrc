@@ -20,6 +20,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+if [ -f ~/.bashrc.local ]; then
+  . ~/.bashrc.local
+fi
+
 # Env variables
 export EDITOR="/usr/bin/nvim"
 
@@ -27,6 +31,10 @@ export EDITOR="/usr/bin/nvim"
 export HISTFILESIZE=100000
 export HISTSIZE=100000
 export HISTTIMEFORMAT="[%F %T] "
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
 
 # fzf bindings
 source /usr/share/fzf/key-bindings.bash
