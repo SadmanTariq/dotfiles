@@ -37,8 +37,7 @@ export HISTTIMEFORMAT="[%F %T] "
 shopt -s checkwinsize
 
 # fzf bindings
-source /usr/share/fzf/key-bindings.bash
-source /usr/share/fzf/completion.bash
+eval "$(fzf --bash)"
 
 # bash parameter completion for the dotnet CLI
 _dotnet_bash_complete()
@@ -61,9 +60,9 @@ if [ "${BASH_VERSINFO[0]}" -gt 4 ]\
     || ([ "${BASH_VERSINFO[0]}" -eq 4 ]\
     && [ "${BASH_VERSINFO[1]}" -ge 1 ])
 then
-  source <("/usr/bin/starship" init bash --print-full-init)
+  source <(starship init bash --print-full-init)
 else
-  source /dev/stdin <<<"$("/usr/bin/starship" init bash --print-full-init)"
+  source /dev/stdin <<<"$(starship init bash --print-full-init)"
 fi
 
 # zoxide
