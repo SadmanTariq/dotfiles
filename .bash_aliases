@@ -95,3 +95,5 @@ function svenv() {
     echo 'No venv found in ./venv or ./.venv'
   fi
 }
+
+alias mktmp='cd "$(mktemp -d)"'
