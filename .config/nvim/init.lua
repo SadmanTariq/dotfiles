@@ -32,6 +32,9 @@ require('lazy').setup("plugins")
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 
+-- Highest conceal level for markdown documents
+vim.opt.conceallevel = 2
+
 -- Set highlight on search
 vim.o.hlsearch = true
 
