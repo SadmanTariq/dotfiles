@@ -86,6 +86,8 @@ fi
 
 alias clip='xclip -selection clipboard'
 
+alias mkvenv='python -m venv .venv && source ./.venv/bin/activate'
+
 function svenv() {
   if [ -d 'venv' ]; then
     source venv/bin/activate

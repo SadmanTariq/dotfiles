@@ -25,7 +25,7 @@ if [ -f ~/.bashrc.local ]; then
 fi
 
 # Env variables
-export EDITOR="/usr/bin/nvim"
+export EDITOR="nvim"
 
 # Increase history size
 export HISTFILESIZE=100000
