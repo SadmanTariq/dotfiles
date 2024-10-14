@@ -98,4 +98,23 @@ function svenv() {
   fi
 }
 
-alias mktmp='cd "$(mktemp -d)"'
+function mktmp() {
+  __TMPDIR="$(mktemp -d)"
+  echo $__TMPDIR
+  cd "$__TMPDIR"
+}
+
+alias cdtmp='cd $__TMPDIR'
+
+function rmtmp() {
+  if [ -d "$__TMPDIR" ]; then
+    # make sure $tmpdir is in /tmp/
+    if [[ "$__TMPDIR" == /tmp/* ]]; then
+      rm -rf "$__TMPDIR"
+    else
+      echo "Not removing $__TMPDIR because it is not in /tmp/"
+    fi
+  else
+    echo "No tmpdir found"
+  fi
+}
