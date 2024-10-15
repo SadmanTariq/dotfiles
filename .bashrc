@@ -26,6 +26,7 @@ fi
 
 # Env variables
 export EDITOR="nvim"
+export BROWSER="zen-browser"
 
 # Increase history size
 export HISTFILESIZE=100000
